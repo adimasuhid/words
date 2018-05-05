@@ -8,7 +8,7 @@ class Dictionary
     setup_phrases
   end
 
-  def sequence
+  def sequences
     unique_phrases.keys
   end
 

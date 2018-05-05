@@ -26,11 +26,12 @@ class Dictionary
 
   def add_phrases_from(word)
     counter = 0
+    filtered_word = filter_word(word)
 
     loop do
       min = counter
       max = counter + 3
-      phrase = word[min..max]
+      phrase = filtered_word[min..max]
 
       break if phrase.length < DEFAULT_PHRASE_LENGTH
 
@@ -46,6 +47,10 @@ class Dictionary
     else
       phrases[phrase] = word
     end
+  end
+
+  def filter_word(word)
+    word.downcase.gsub(/[^a-z]/i, '')
   end
 
   def unique_phrases

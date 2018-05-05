@@ -1,7 +1,7 @@
 require_relative './dictionary.rb'
 
-filename = ARGV[0]
-file_array = File.readlines(filename).map &:strip
+filename = ARGV[0] || 'dictionary.txt'
+file_array = File.readlines(filename).map(&:strip)
 dictionary = Dictionary.new(file_array)
 
 print "Writing sequences..."
